@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://chp7x0a0n2evn"]
+
+[ext_resource type="Script" uid="uid://bee74rb27dxwe" path="res://Scripts/BattleSlot.gd" id="1_qbsc5"]
+[ext_resource type="PackedScene" uid="uid://ce087x2lrod6w" path="res://DraggableItem.tscn" id="2_27a20"]
+[ext_resource type="PackedScene" uid="uid://dnug17x6p52tl" path="res://MergeEffect.tscn" id="3_27a20"]
+[ext_resource type="Texture2D" uid="uid://bes41ejj4ukw4" path="res://Assets/Merge_Area.png" id="4_jy5im"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc878"]
+size = Vector2(64, 64)
+
+[node name="BattleSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_qbsc5")
+merged_scene = ExtResource("2_27a20")
+merge_effect_scene = ExtResource("3_27a20")
+
+[node name="MonsterTexture" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="SlotBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.469
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 31.984
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jy5im")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gc878")

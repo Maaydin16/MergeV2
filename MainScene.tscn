@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3vg5k6evbo3"]
+
+[ext_resource type="PackedScene" uid="uid://kqs7p4eepwwy" path="res://SpawnBox.tscn" id="1_3mqji"]
+[ext_resource type="PackedScene" uid="uid://6kgeontn6u2t" path="res://MergeArea.tscn" id="2_rpqi1"]
+[ext_resource type="PackedScene" uid="uid://chp7x0a0n2evn" path="res://BattleSlot.tscn" id="2_x4av3"]
+[ext_resource type="Texture2D" uid="uid://hjf21cnonpp6" path="res://Assets/Level2.png" id="4_rf2cd"]
+[ext_resource type="Script" uid="uid://bdunfhykpumqx" path="res://Scripts/DraggableItem.gd" id="5_a814b"]
+
+[sub_resource type="PackedScene" id="PackedScene_5crlr"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("DraggableItem2", "TextureRect", "offset_right", "offset_bottom", "mouse_filter", "texture", "script", "level"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0),
+"variants": [40.0, 40.0, 0, ExtResource("4_rf2cd"), ExtResource("5_a814b"), 2],
+"version": 3
+}
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="SpawnBox" parent="." instance=ExtResource("1_3mqji")]
+layout_mode = 1
+anchor_left = 0.007
+anchor_top = 0.817
+anchor_right = 0.192
+anchor_bottom = 0.953
+offset_left = -0.04
+offset_top = -0.360046
+offset_right = -0.240005
+offset_bottom = -0.240112
+grow_vertical = 0
+
+[node name="MergeArea" parent="." instance=ExtResource("2_rpqi1")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.219
+anchor_top = 0.794
+anchor_right = 0.969
+anchor_bottom = 0.986
+offset_left = 3.31999
+offset_top = -7.52002
+offset_right = -221.68
+offset_bottom = -64.8801
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -403.0
+offset_right = 696.0
+offset_bottom = -261.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BattleSlot" parent="BattleArea/HBoxContainer" instance=ExtResource("2_x4av3")]
+layout_mode = 2
+merged_scene = SubResource("PackedScene_5crlr")
+
+[node name="BattleSlot2" parent="BattleArea/HBoxContainer" instance=ExtResource("2_x4av3")]
+layout_mode = 2
+merged_scene = SubResource("PackedScene_5crlr")
+
+[node name="BattleSlot3" parent="BattleArea/HBoxContainer" instance=ExtResource("2_x4av3")]
+layout_mode = 2
+merged_scene = SubResource("PackedScene_5crlr")
+
+[node name="BattleSlot4" parent="BattleArea/HBoxContainer" instance=ExtResource("2_x4av3")]
+layout_mode = 2
+merged_scene = SubResource("PackedScene_5crlr")

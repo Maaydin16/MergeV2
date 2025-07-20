@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://6kgeontn6u2t"]
+
+[ext_resource type="PackedScene" uid="uid://bwb5ou3ydr7or" path="res://MergeSlot.tscn" id="1_7ee2d"]
+
+[node name="MergeArea" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.859
+anchor_bottom = 1.662
+offset_bottom = 2.52
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="MergeSlot" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot2" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot3" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot4" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot5" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot6" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot7" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MergeSlot8" parent="GridContainer" instance=ExtResource("1_7ee2d")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

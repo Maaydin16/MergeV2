@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://kqs7p4eepwwy"]
+
+[ext_resource type="Script" uid="uid://dbo06fo5xj5vo" path="res://Scripts/SpawnBox.gd" id="1_ibjjf"]
+[ext_resource type="Texture2D" uid="uid://ks6g7oa7ifjj" path="res://Assets/spawn_frame.png" id="3_cmqyh"]
+
+[sub_resource type="Animation" id="Animation_kjidl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemContainer:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_cmqyh"]
+resource_name = "spawn_in"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1.07177, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemContainer:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kjidl"]
+_data = {
+&"RESET": SubResource("Animation_kjidl"),
+&"spawn_in": SubResource("Animation_cmqyh")
+}
+
+[node name="SpawnBox" type="Control"]
+layout_mode = 3
+anchor_right = 0.229
+anchor_bottom = 0.153
+offset_right = -8.88
+offset_bottom = -9.24001
+script = ExtResource("1_ibjjf")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cmqyh")
+
+[node name="ItemContainer" type="Node2D" parent="."]
+z_index = 1
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kjidl")
+}
+autoplay = "spawn_in"

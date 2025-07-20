@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://caahk4ad40ams"]
+
+[ext_resource type="Texture2D" uid="uid://hjf21cnonpp6" path="res://Assets/Level2.png" id="1_vgrmm"]
+[ext_resource type="Script" uid="uid://bdunfhykpumqx" path="res://Scripts/DraggableItem.gd" id="2_xa4wm"]
+
+[node name="DraggableItem2" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+texture = ExtResource("1_vgrmm")
+script = ExtResource("2_xa4wm")
+level = 2
