@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwb5ou3ydr7or"]
 
 [ext_resource type="Script" uid="uid://bd5rmyq25a6ch" path="res://Scripts/MergeSlot.gd" id="1_ye50o"]
-[ext_resource type="PackedScene" uid="uid://caahk4ad40ams" path="res://DraggableItem2.tscn" id="2_gj1ei"]
+[ext_resource type="PackedScene" uid="uid://caahk4ad40ams" path="res://Scenes/DraggableItem2.tscn" id="2_gj1ei"]
 [ext_resource type="Texture2D" uid="uid://bes41ejj4ukw4" path="res://Assets/Merge_Area.png" id="3_gj1ei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ye50o"]

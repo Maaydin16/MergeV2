@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://6kgeontn6u2t"]
 
-[ext_resource type="PackedScene" uid="uid://bwb5ou3ydr7or" path="res://MergeSlot.tscn" id="1_7ee2d"]
+[ext_resource type="PackedScene" uid="uid://bwb5ou3ydr7or" path="res://Scenes/MergeSlot.tscn" id="1_7ee2d"]
 
 [node name="MergeArea" type="Control"]
 layout_mode = 3
