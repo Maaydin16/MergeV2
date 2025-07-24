@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="MergeV2"
+config/name="MergeV1"
 run/main_scene="uid://c3vg5k6evbo3"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+config/tags=PackedStringArray()
 
 [display]
 

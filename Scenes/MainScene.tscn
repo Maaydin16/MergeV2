@@ -1,23 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3vg5k6evbo3"]
+[gd_scene load_steps=6 format=3 uid="uid://c3vg5k6evbo3"]
 
 [ext_resource type="PackedScene" uid="uid://kqs7p4eepwwy" path="res://Scenes/SpawnBox.tscn" id="1_qxria"]
 [ext_resource type="PackedScene" uid="uid://6kgeontn6u2t" path="res://Scenes/MergeArea.tscn" id="2_y4jh7"]
 [ext_resource type="PackedScene" uid="uid://chp7x0a0n2evn" path="res://Scenes/BattleSlot.tscn" id="3_q68mp"]
-[ext_resource type="Texture2D" uid="uid://hjf21cnonpp6" path="res://Assets/Level2.png" id="4_f140w"]
-[ext_resource type="Script" uid="uid://bdunfhykpumqx" path="res://Scripts/DraggableItem.gd" id="5_0iob3"]
-
-[sub_resource type="PackedScene" id="PackedScene_5crlr"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("DraggableItem2", "TextureRect", "offset_right", "offset_bottom", "mouse_filter", "texture", "script", "level"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0),
-"variants": [40.0, 40.0, 0, ExtResource("4_f140w"), ExtResource("5_0iob3"), 2],
-"version": 3
-}
+[ext_resource type="Script" uid="uid://djaqrnnjfdnhs" path="res://Scripts/MergeHandler.gd" id="4_7rqgy"]
+[ext_resource type="PackedScene" uid="uid://ce087x2lrod6w" path="res://Scenes/DraggableItem.tscn" id="5_qxria"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -77,18 +64,24 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="BattleSlot" parent="BattleArea/HBoxContainer" instance=ExtResource("3_q68mp")]
+[node name="BattleSlot" parent="BattleArea/HBoxContainer" node_paths=PackedStringArray("merge_handler") instance=ExtResource("3_q68mp")]
 layout_mode = 2
-merged_scene = SubResource("PackedScene_5crlr")
+merge_handler = NodePath("../../../MergeHandler")
 
-[node name="BattleSlot2" parent="BattleArea/HBoxContainer" instance=ExtResource("3_q68mp")]
+[node name="BattleSlot2" parent="BattleArea/HBoxContainer" node_paths=PackedStringArray("merge_handler") instance=ExtResource("3_q68mp")]
 layout_mode = 2
-merged_scene = SubResource("PackedScene_5crlr")
+merge_handler = NodePath("../../../MergeHandler")
 
-[node name="BattleSlot3" parent="BattleArea/HBoxContainer" instance=ExtResource("3_q68mp")]
+[node name="BattleSlot3" parent="BattleArea/HBoxContainer" node_paths=PackedStringArray("merge_handler") instance=ExtResource("3_q68mp")]
 layout_mode = 2
-merged_scene = SubResource("PackedScene_5crlr")
+merge_handler = NodePath("../../../MergeHandler")
 
-[node name="BattleSlot4" parent="BattleArea/HBoxContainer" instance=ExtResource("3_q68mp")]
+[node name="BattleSlot4" parent="BattleArea/HBoxContainer" node_paths=PackedStringArray("merge_handler") instance=ExtResource("3_q68mp")]
 layout_mode = 2
-merged_scene = SubResource("PackedScene_5crlr")
+merge_handler = NodePath("../../../MergeHandler")
+
+[node name="MergeHandler" type="Node" parent="."]
+script = ExtResource("4_7rqgy")
+respawn_box_path = NodePath("../SpawnBox")
+merged_scene = ExtResource("5_qxria")
+metadata/_custom_type_script = "uid://djaqrnnjfdnhs"

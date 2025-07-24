@@ -1,6 +1,7 @@
 extends Control
 
-@export var item_scene: PackedScene = preload("res://DraggableItem.tscn")
+@export var item_scene: PackedScene = preload("res://Scenes/DraggableItem.tscn")
+
 @export var respawn_interval := 3.0
 
 @onready var container = $ItemContainer
